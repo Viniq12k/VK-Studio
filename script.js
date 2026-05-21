@@ -1,38 +1,38 @@
-/* ============================== */
-/* Filtro de Serviços */
-/* ============================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const filterButtons = document.querySelectorAll(".filter-button");
+  const serviceCards = document.querySelectorAll(".service-card");
+  const currentYear = document.querySelector("#current-year");
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Seleciona todos os botões de filtro
-  const filtroButtons = document.querySelectorAll(".filtroButton");
-  // Seleciona todos os cards de serviços
-  const cards = document.querySelectorAll(".card");
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
 
-  // Adiciona event listener para cada botão
-  filtroButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      // Remove a classe 'ativo' de todos os botões
-      filtroButtons.forEach((btn) => btn.classList.remove("ativo"));
-      // Adiciona a classe 'ativo' ao botão clicado
-      this.classList.add("ativo");
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
 
-      // Obtém o filtro selecionado
-      const filtroSelecionado = this.getAttribute("data-filtro");
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.matches("a")) {
+        navLinks.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
 
-      // Filtra os cards
-      cards.forEach((card) => {
-        if (filtroSelecionado === "todos") {
-          // Se for 'todos', mostra todos os cards
-          card.classList.remove("hide");
-        } else {
-          // Compara a categoria do card com o filtro selecionado
-          const categorialCard = card.getAttribute("data-categoria");
-          if (categorialCard === filtroSelecionado) {
-            card.classList.remove("hide");
-          } else {
-            card.classList.add("hide");
-          }
-        }
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedFilter = button.dataset.filter;
+
+      filterButtons.forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
+
+      serviceCards.forEach((card) => {
+        const shouldShow = selectedFilter === "todos" || card.dataset.category === selectedFilter;
+        card.classList.toggle("is-hidden", !shouldShow);
       });
     });
   });

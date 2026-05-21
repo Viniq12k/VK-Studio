@@ -1,142 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <!--Meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--CSS-->
+    <meta name="description"
+        content="VK Studio: beleza, unhas, sobrancelhas e cuidados estéticos com atendimento profissional e acolhedor.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!--Favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="imagens/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="imagens/favicon_io/site.webmanifest">
-    <!--Link Cloudflare-->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        .instagram-icon {
-            font-size: 40px;
-            color: #ffffff;
-            text-decoration: none;
-        }
-    </style>
-    <!--Titulo-->
-    <title>VK Studio</title>
+    <title>VK Studio | Beleza e Estética</title>
 </head>
 
 <body>
-    <!--============================-->
-    <!--Cabeçalho e banner da pagina-->
-    <!--============================-->
-    <header>
-        <nav>
-            <!-- Logo da barra de navegação-->
-            <img src="imagens/logoNavBar.png" alt="Logo VK Studio">
-            <!-- Links de navegação-->
-            <ul>
-                <li id="home"><a href="#home">Home</a></li>
-                <li><a href="#sobreNos">Sobre Nós</a></li>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Navegação principal">
+            <a class="brand" href="#inicio" aria-label="Voltar para o início">
+                <img src="imagens/logoNavBar.png" alt="Logo VK Studio">
+                <span>VK Studio</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
-                <li><a href="https://wa.me/11947904605?text=Olá,%20gostaria%20de%20suporte,%20por%20favor!"
-                        target="_blank">Contato</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
-        <!-- Banner da página-->
-        <div id="banner">
-            <img src="" alt="">
-        </div>
     </header>
-    <!--============================-->
-    <!--Conteúdo principal da pagina-->
-    <!--============================-->
+
     <main>
-        <section id="sobreNos">
-
-            <h1>Sobre Nós</h1>
-            <div class="paragrafoSobreNos">
-                <p>O VK Studio é um espaço pensado para realçar a sua beleza com cuidado, carinho e profissionalismo.
-                    Somos
-                    um salão especializado em serviços de beleza e estética, oferecendo uma experiência única e
-                    personalizada para cada cliente.</p>
-                <p>Nossa equipe é formada por profissionais apaixonadas pelo que fazem, sempre atualizadas com as
-                    últimas
-                    tendências do mercado. Aqui, cada detalhe importa — desde o atendimento até o resultado final.</p>
-                <p>Nosso compromisso é com a sua satisfação e bem-estar. Seja para uma ocasião especial ou para o seu
-                    cuidado diário, o VK Studio está pronto para te receber com excelência.</p>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <p class="eyebrow">Beleza, cuidado e autoestima</p>
+                <h1>VK Studio</h1>
+                <p class="hero-copy">
+                    Seu momento de beleza merece um atendimento impecável. No VK Studio, cada detalhe é pensado para
+                    realçar sua essência com técnicas atuais, produtos de qualidade e aquele cuidado que faz você sair
+                    se sentindo ainda mais confiante.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary"
+                        href="https://wa.me/11947904605?text=Ol%C3%A1,%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20VK%20Studio!"
+                        target="_blank" rel="noopener">Agendar horário</a>
+                    <a class="btn btn-secondary" href="#servicos">Ver serviços</a>
+                </div>
             </div>
 
+            <div class="hero-media" aria-label="Identidade visual do VK Studio">
+                <img src="imagens/logoVKSTUDIO.png" alt="Borboleta e assinatura VK Studio">
+            </div>
         </section>
-        <section id="servicos">
-            <h2>Nossos Serviços:</h2>
-            <p>Escolha o serviço ideal para você</p>
-            <!--Botões para filtrar serviços-->
-            <div class="filtrosContainer">
-                <button class="filtroButton ativo" data-filtro="todos">Todos</button>
-                <button class="filtroButton" data-filtro="maos-pes">Mãos e pés</button>
-                <button class="filtroButton" data-filtro="rosto">Rosto</button>
+
+        <section class="intro-strip" aria-label="Diferenciais do VK Studio">
+            <div>
+                <strong>Atendimento personalizado</strong>
+                <span>Uma experiência pensada para o seu estilo.</span>
             </div>
-            <!--Cards de serviços-->
-            <div id="containerCards">
-                <a href="https://wa.me/11947904605?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Manicure!"
-                    target="_blank" class="card" data-categoria="maos-pes">
-                    <img src="imagens/manicure.png" alt="Manicure">
+            <div>
+                <strong>Agenda prática</strong>
+                <span>Fale pelo WhatsApp e escolha o melhor horário.</span>
+            </div>
+            <div>
+                <strong>Acabamento profissional</strong>
+                <span>Resultado bonito, delicado e feito com cuidado.</span>
+            </div>
+        </section>
+
+        <section class="section about" id="sobre">
+            <div class="section-heading">
+                <p class="eyebrow">Sobre o studio</p>
+                <h2>Um espaço para se cuidar com calma, técnica e carinho.</h2>
+            </div>
+            <div class="about-grid">
+                <p>
+                    O VK Studio nasceu para transformar o cuidado de beleza em uma pausa especial na rotina. Nosso foco
+                    é entregar um atendimento acolhedor, pontual e caprichado, valorizando o que cada cliente tem de
+                    único.
+                </p>
+                <p>
+                    Trabalhamos com serviços de unhas, sobrancelhas e estética facial, sempre buscando equilíbrio entre
+                    tendência, naturalidade e acabamento elegante.
+                </p>
+            </div>
+        </section>
+
+        <section class="section services" id="servicos">
+            <div class="section-heading centered">
+                <p class="eyebrow">Menu de beleza</p>
+                <h2>Escolha seu próximo cuidado</h2>
+                <p>Filtre por categoria e agende direto pelo WhatsApp.</p>
+            </div>
+
+            <div class="filters" aria-label="Filtros de serviços">
+                <button class="filter-button active" type="button" data-filter="todos">Todos</button>
+                <button class="filter-button" type="button" data-filter="maos-pes">Mãos e pés</button>
+                <button class="filter-button" type="button" data-filter="rosto">Rosto</button>
+            </div>
+
+            <div class="service-grid">
+                <a class="service-card"
+                    href="https://wa.me/11947904605?text=Ol%C3%A1,%20gostaria%20de%20agendar%20manicure%20no%20VK%20Studio!"
+                    target="_blank" rel="noopener" data-category="maos-pes">
+                    <img src="imagens/manicure.png" alt="Serviço de manicure">
+                    <span>Mãos e pés</span>
                     <h3>Manicure</h3>
-                    <p>Tratamento completo para unhas das mãos.</p>
+                    <p>Cutilagem, esmaltação e acabamento delicado para mãos bem cuidadas.</p>
                 </a>
-                <a href="https://wa.me/11947904605?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Pedicure!"
-                    target="_blank" class="card" data-categoria="maos-pes">
-                    <img src="" alt="Pedicure">
+
+                <a class="service-card"
+                    href="https://wa.me/11947904605?text=Ol%C3%A1,%20gostaria%20de%20agendar%20pedicure%20no%20VK%20Studio!"
+                    target="_blank" rel="noopener" data-category="maos-pes">
+                    <img src="imagens/manicureImg.png" alt="Cuidados com unhas">
+                    <span>Mãos e pés</span>
                     <h3>Pedicure</h3>
-                    <p>Cuidados especiais para os pés e unhas.</p>
+                    <p>Cuidado completo para pés, unhas e finalização com aparência renovada.</p>
                 </a>
-                <a href="https://wa.me/11947904605?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Plástica%20dos%20pés!"
-                    target="_blank" class="card" data-categoria="maos-pes">
-                    <img src="" alt="Plástica dos pés">
+
+                <a class="service-card"
+                    href="https://wa.me/11947904605?text=Ol%C3%A1,%20gostaria%20de%20agendar%20pl%C3%A1stica%20dos%20p%C3%A9s%20no%20VK%20Studio!"
+                    target="_blank" rel="noopener" data-category="maos-pes">
+                    <img src="imagens/pngBnc-removebg-preview.png" alt="Tratamento para os pés">
+                    <span>Mãos e pés</span>
                     <h3>Plástica dos pés</h3>
-                    <p>Tratamento para hidratar e suavizar a pele dos pés.</p>
+                    <p>Hidratação e maciez para deixar os pés com toque mais suave.</p>
                 </a>
-                <a href="https://wa.me/11947904605?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Design%20de%20Sobrancelha!"
-                    target="_blank" class="card" data-categoria="rosto">
+
+                <a class="service-card"
+                    href="https://wa.me/11947904605?text=Ol%C3%A1,%20gostaria%20de%20agendar%20design%20de%20sobrancelha%20no%20VK%20Studio!"
+                    target="_blank" rel="noopener" data-category="rosto">
                     <img src="imagens/Design de sobrancelha.png" alt="Design de sobrancelha">
-                    <h3>Design de Sobrancelha</h3>
-                    <p>Modelagem e cuidado para realçar seu olhar.</p>
+                    <span>Rosto</span>
+                    <h3>Design de sobrancelha</h3>
+                    <p>Modelagem estratégica para valorizar seu olhar com naturalidade.</p>
                 </a>
-                <a href="https://wa.me/11947904605?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Henna!"
-                    target="_blank" class="card" data-categoria="rosto">
-                    <img src="imagens/henna.png" alt="henna">
+
+                <a class="service-card"
+                    href="https://wa.me/11947904605?text=Ol%C3%A1,%20gostaria%20de%20agendar%20henna%20no%20VK%20Studio!"
+                    target="_blank" rel="noopener" data-category="rosto">
+                    <img src="imagens/henna.png" alt="Aplicação de henna">
+                    <span>Rosto</span>
                     <h3>Henna</h3>
-                    <p>Coloração natural para sobrancelhas e cílios.</p>
+                    <p>Preenchimento suave para sobrancelhas mais definidas e harmônicas.</p>
                 </a>
-                <a href="https://wa.me/11947904605?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Depilação%20facial!"
-                    target="_blank" class="card" data-categoria="rosto">
-                    <img src="" alt="Depilação facial">
+
+                <a class="service-card"
+                    href="https://wa.me/11947904605?text=Ol%C3%A1,%20gostaria%20de%20agendar%20depila%C3%A7%C3%A3o%20facial%20no%20VK%20Studio!"
+                    target="_blank" rel="noopener" data-category="rosto">
+                    <img src="imagens/image-removebg-preview.png" alt="Cuidados faciais">
+                    <span>Rosto</span>
                     <h3>Depilação facial</h3>
-                    <p>Tratamento facial para uma pele saudável e radiante.</p>
-                </a>
-                <a href="https://wa.me/11947904605?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Argiloterapia!"
-                    target="_blank" class="card" data-categoria="rosto">
-                    <img src="" alt="Argiloterapia">
-                    <h3>Argiloterapia</h3>
-                    <p>Tratamento facial para uma pele saudável e radiante.</p>
+                    <p>Pele mais lisinha com técnica cuidadosa para o rosto.</p>
                 </a>
             </div>
-
         </section>
 
+        <section class="booking" id="contato">
+            <div>
+                <p class="eyebrow">Pronta para se cuidar?</p>
+                <h2>Agende seu horário no VK Studio.</h2>
+                <p>Chame no WhatsApp e conte qual serviço você deseja. Vamos te responder com os horários disponíveis.
+                </p>
+            </div>
+            <a class="btn btn-primary"
+                href="https://wa.me/11947904605?text=Ol%C3%A1,%20quero%20agendar%20um%20hor%C3%A1rio%20no%20VK%20Studio!"
+                target="_blank" rel="noopener">Falar no WhatsApp</a>
+        </section>
     </main>
-    <!--============================-->
-    <!--Rodapé da pagina-->
-    <!--============================-->
-    <footer>
-        <p>&copy; 2026 VK Studio. Todos os direitos reservados.</p>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year">2026</span> VK Studio. Todos os direitos reservados.</p>
         <a href="https://www.instagram.com/vk.stud1o?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            target="_blank">Instagram<svg xmlns="http://w3.org" viewBox="0 0 448 512" fill="currentColor" width="20"
-                height="20">
-                <path
-                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8c14.8 0 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-            </svg></a>
+            target="_blank" rel="noopener">Instagram @vk.stud1o</a>
     </footer>
+
     <script src="script.js"></script>
 </body>
 
