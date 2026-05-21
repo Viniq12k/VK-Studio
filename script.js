@@ -31,7 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
       button.classList.add("active");
 
       serviceCards.forEach((card) => {
-        const shouldShow = selectedFilter === "todos" || card.dataset.category === selectedFilter;
+        const shouldShow =
+          selectedFilter === "todos" ||
+          card.dataset.category === selectedFilter;
         card.classList.toggle("is-hidden", !shouldShow);
       });
     });

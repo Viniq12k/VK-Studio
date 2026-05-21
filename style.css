@@ -382,10 +382,18 @@ h3 {
 
 .service-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
   background: var(--surface-warm);
-  padding: 22px;
+  filter: saturate(0.92) contrast(0.98);
+  transition:
+    filter 180ms ease,
+    transform 220ms ease;
+}
+
+.service-card:hover img {
+  filter: saturate(1.04) contrast(1.02);
+  transform: scale(1.03);
 }
 
 .service-card span,
@@ -480,32 +488,33 @@ h3 {
 
 @media (max-width: 900px) {
   .menu-toggle {
-    display: block;
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 0 14px;
   }
 
   .nav-links {
-    position: absolute;
-    top: 76px;
-    left: 16px;
-    right: 16px;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: var(--surface);
-    padding: 10px;
-    box-shadow: var(--shadow);
-  }
-
-  .nav-links.is-open {
     display: flex;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
   }
 
   .nav-links a {
-    border-radius: var(--radius);
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 999px;
     justify-content: center;
+    font-size: 0.84rem;
   }
 
   .hero {
@@ -564,10 +573,6 @@ h3 {
 
   .intro-strip div {
     padding: 22px 4px;
-  }
-
-  .service-card img {
-    padding: 18px;
   }
 
   .site-footer {
